@@ -1,0 +1,39 @@
+grievances = []
+
+while True:
+    print("\n----- Student Grievance System -----")
+    print("1. Login")
+    print("2. Register Grievance")
+    print("3. View Grievance")
+    print("4. Admin View")
+    print("5. Exit")
+
+    choice = input("Enter choice: ")
+
+    if choice == '1':
+        print("Login Successful")
+
+    elif choice == '2':
+        name = input("Enter Name: ")
+        issue = input("Enter Grievance: ")
+        grievances.append([name, issue])
+        print("Grievance Submitted Successfully")
+
+    elif choice == '3':
+        if len(grievances) == 0:
+            print("No Grievances Found")
+        else:
+            print("\nGrievance List:")
+            for i in range(len(grievances)):
+                print(i+1, ".", grievances[i][0], "-", grievances[i][1])
+
+    elif choice == '4':
+        print("\nAdmin View")
+        print("Total Grievances:", len(grievances))
+
+    elif choice == '5':
+        print("Exiting Program")
+        break
+
+    else:
+        print("Invalid Choice")
